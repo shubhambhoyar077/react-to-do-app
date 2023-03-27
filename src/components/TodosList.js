@@ -5,6 +5,7 @@ function TodosList({
   todos,
   handelCheckBox,
   handelDelClick,
+  handelSaveClick
 }) {
   return (
     <ul className="todo-list">
@@ -14,6 +15,7 @@ function TodosList({
           item={element}
           handelCheckBox={handelCheckBox}
           handelDelClick={handelDelClick}
+          handelSaveClick={handelSaveClick}
         />
       ))}
     </ul>

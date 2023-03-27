@@ -1,20 +1,48 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function TodoItem({
   item,
   handelCheckBox,
   handelDelClick,
+  handelSaveClick
 }) {
+  const [editMode, setEditMode] = useState(false);
+  const [title, setTitle] = useState(item.todo);
+
+  const handelEditClick = () => {
+    setEditMode(true); 
+  }
+
+  const handelEdit = (e) => {
+    setTitle(e.target.value);
+  }
+
+  const saveClick = () => {
+    setEditMode(false);
+    handelSaveClick(item.id, title)
+  }
+
   return (
     <li>
-      <input
-        type="checkbox"
-        checked={item.completed}
-        onChange={() => handelCheckBox(item.id)}
-      />
-      {item.todo}
-      <button type="button">edit</button>
-      <button type="button" onClick={() => handelDelClick(item.id)}>del</button>
+      <div className={editMode? 'disable': ''}>
+        <input
+          type="checkbox"
+          checked={item.completed}
+          onChange={() => handelCheckBox(item.id)}
+        />
+        {title}
+        <button type="button" onClick={handelEditClick}>Edit</button>
+        <button type="button" onClick={() => handelDelClick(item.id)}>Delete</button>
+      </div>
+      <div className={editMode? '': 'disable'}>
+        <input
+          type="text"
+          value={title}
+          onChange = {handelEdit}
+        />
+        <button type="button" onClick={() => saveClick(item.id, title)}>Save</button>
+      </div>
     </li>
   );
 }

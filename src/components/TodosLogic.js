@@ -31,6 +31,18 @@ export default function TodosLogic() {
     setTodos(todos.filter((element) => element.id !== id));
   };
 
+  const handelSaveClick = (id, title) => {
+    setTodos((prev) => prev.map((element) => {
+      if (element.id === id) {
+        return {
+          ...element,
+          todo: title,
+        };
+      }
+      return element;
+    }));
+  }
+
   return (
     <div className="todo-logic">
       <InputTodo addItem={addItem} />
@@ -38,6 +50,7 @@ export default function TodosLogic() {
         todos={todos}
         handelCheckBox={handelCheckBox}
         handelDelClick={handelDelClick}
+        handelSaveClick={handelSaveClick}
       />
     </div>
   );
