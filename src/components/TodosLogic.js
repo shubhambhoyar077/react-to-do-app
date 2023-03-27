@@ -43,6 +43,11 @@ export default function TodosLogic() {
     }));
   };
 
+  const handelClearAll = () => {
+    setTodos(todos.filter((element) => 
+    !element.completed));
+  }
+
   return (
     <div className="todo-logic">
       <InputTodo addItem={addItem} />
@@ -52,6 +57,7 @@ export default function TodosLogic() {
         handelDelClick={handelDelClick}
         handelSaveClick={handelSaveClick}
       />
+      <button className='clear' onClick={handelClearAll}>Clear All</button>
     </div>
   );
 }

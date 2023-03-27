@@ -58,3 +58,10 @@ padding: 2px;
 .mark{
   text-decoration: line-through;
 }
+
+.clear{
+  width: 100%;
+  margin: 0;
+  border: none;
+  padding: 3px 3px;
+}
