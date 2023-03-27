@@ -20,13 +20,21 @@ export default function TodosLogic() {
   }]);
 
   const handelCheckBox = (id) => {
-    console.log(id);
-  }
+    setTodos((prev) => prev.map((element) => {
+      if (element.id === id) {
+        return {
+          ...element,
+          completed: !element.completed,
+        };
+      }
+      return element;
+    }));
+  };
 
   return (
     <div className="todo-logic">
       <InputTodo />
-      <TodosList todos={todos} handelCheckBox={handelCheckBox}/>
+      <TodosList todos={todos} handelCheckBox={handelCheckBox} />
     </div>
   );
 }
