@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
+import Storage from '../storage';
+
+const storage  = new Storage();
 
 export default function TodosLogic() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(storage.getLocalStorage);
+
+  useEffect(() => {
+    storage.updateLocalStorage(todos);
+  }, [todos]);
 
   const handelCheckBox = (id) => {
     setTodos((prev) => prev.map((element) => {
