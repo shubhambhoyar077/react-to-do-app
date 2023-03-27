@@ -5,27 +5,27 @@ export default function TodoItem({
   item,
   handelCheckBox,
   handelDelClick,
-  handelSaveClick
+  handelSaveClick,
 }) {
   const [editMode, setEditMode] = useState(false);
   const [title, setTitle] = useState(item.todo);
 
   const handelEditClick = () => {
-    setEditMode(true); 
-  }
+    setEditMode(true);
+  };
 
   const handelEdit = (e) => {
     setTitle(e.target.value);
-  }
+  };
 
   const saveClick = () => {
     setEditMode(false);
-    handelSaveClick(item.id, title)
-  }
+    handelSaveClick(item.id, title);
+  };
 
   return (
     <li>
-      <div className={editMode? 'disable': ''}>
+      <div className={editMode ? 'disable' : ''}>
         <input
           type="checkbox"
           checked={item.completed}
@@ -35,11 +35,11 @@ export default function TodoItem({
         <button type="button" onClick={handelEditClick}>Edit</button>
         <button type="button" onClick={() => handelDelClick(item.id)}>Delete</button>
       </div>
-      <div className={editMode? '': 'disable'}>
+      <div className={editMode ? '' : 'disable'}>
         <input
           type="text"
           value={title}
-          onChange = {handelEdit}
+          onChange={handelEdit}
         />
         <button type="button" onClick={() => saveClick(item.id, title)}>Save</button>
       </div>
@@ -54,4 +54,6 @@ TodoItem.propTypes = {
     completed: PropTypes.bool,
   }).isRequired,
   handelCheckBox: PropTypes.func.isRequired,
+  handelDelClick: PropTypes.func.isRequired,
+  handelSaveClick: PropTypes.func.isRequired,
 };

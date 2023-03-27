@@ -5,7 +5,7 @@ function TodosList({
   todos,
   handelCheckBox,
   handelDelClick,
-  handelSaveClick
+  handelSaveClick,
 }) {
   return (
     <ul className="todo-list">
@@ -29,6 +29,8 @@ TodosList.propTypes = {
     completed: PropTypes.bool,
   })).isRequired,
   handelCheckBox: PropTypes.func.isRequired,
+  handelDelClick: PropTypes.func.isRequired,
+  handelSaveClick: PropTypes.func.isRequired,
 };
 
 export default TodosList;

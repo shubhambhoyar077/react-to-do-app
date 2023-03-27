@@ -41,7 +41,7 @@ export default function TodosLogic() {
       }
       return element;
     }));
-  }
+  };
 
   return (
     <div className="todo-logic">
