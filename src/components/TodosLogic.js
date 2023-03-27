@@ -27,10 +27,18 @@ export default function TodosLogic() {
     setTodos([...todos, newtodo]);
   };
 
+  const handelDelClick = (id) => {
+    setTodos(todos.filter((element) => element.id !== id));
+  };
+
   return (
     <div className="todo-logic">
       <InputTodo addItem={addItem} />
-      <TodosList todos={todos} handelCheckBox={handelCheckBox} />
+      <TodosList
+        todos={todos}
+        handelCheckBox={handelCheckBox}
+        handelDelClick={handelDelClick}
+      />
     </div>
   );
 }

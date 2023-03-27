@@ -14,6 +14,7 @@ export default function InputTodo({ addItem }) {
       setTitle('');
     }
   };
+
   return (
     <form onSubmit={handelSubmit}>
       <label htmlFor="todo">

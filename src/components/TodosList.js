@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-function TodosList({ todos, handelCheckBox }) {
+function TodosList({
+  todos,
+  handelCheckBox,
+  handelDelClick,
+}) {
   return (
     <ul className="todo-list">
       {todos.map((element) => (
@@ -9,6 +13,7 @@ function TodosList({ todos, handelCheckBox }) {
           key={element.id}
           item={element}
           handelCheckBox={handelCheckBox}
+          handelDelClick={handelDelClick}
         />
       ))}
     </ul>

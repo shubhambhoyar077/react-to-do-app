@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 
-export default function TodoItem({ item, handelCheckBox }) {
+export default function TodoItem({
+  item,
+  handelCheckBox,
+  handelDelClick,
+}) {
   return (
     <li>
       <input
@@ -9,6 +13,8 @@ export default function TodoItem({ item, handelCheckBox }) {
         onChange={() => handelCheckBox(item.id)}
       />
       {item.todo}
+      <button type="button">edit</button>
+      <button type="button" onClick={() => handelDelClick(item.id)}>del</button>
     </li>
   );
 }
