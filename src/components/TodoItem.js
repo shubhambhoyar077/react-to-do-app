@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaTrash } from "react-icons/fa";
+import { AiFillEdit } from "react-icons/ai";
+import { BiSave } from "react-icons/bi";
 
 export default function TodoItem({
   item,
@@ -25,23 +28,28 @@ export default function TodoItem({
 
   return (
     <li>
-      <div className={editMode ? 'disable' : ''}>
-        <input
-          type="checkbox"
-          checked={item.completed}
-          onChange={() => handelCheckBox(item.id)}
-        />
-        {title}
-        <button type="button" onClick={handelEditClick}>Edit</button>
-        <button type="button" onClick={() => handelDelClick(item.id)}>Delete</button>
+      <div className={editMode ? 'disable' : 'todoitem'}>
+        <div>
+          <input
+            type="checkbox"
+            checked={item.completed}
+            onChange={() => handelCheckBox(item.id)}
+          />
+          {title}
+        </div>
+        <div>
+          <button type="button" onClick={handelEditClick}><AiFillEdit /></button>
+          <button type="button" onClick={() => handelDelClick(item.id)}><FaTrash /></button>
+        </div>
       </div>
-      <div className={editMode ? '' : 'disable'}>
+      <div className={editMode ? 'todoitem' : 'disable'}>
         <input
+          className='input-text'
           type="text"
           value={title}
           onChange={handelEdit}
         />
-        <button type="button" onClick={() => saveClick(item.id, title)}>Save</button>
+        <button type="button" onClick={() => saveClick(item.id, title)}><BiSave /></button>
       </div>
     </li>
   );
