@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function InputTodo({ addItem }) {
   const [title, setTitle] = useState('');
@@ -9,18 +9,22 @@ export default function InputTodo({ addItem }) {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    if(title.trim()){
+    if (title.trim()) {
       addItem(title);
       setTitle('');
     }
-  }
+  };
   return (
     <form onSubmit={handelSubmit}>
-      <label htmlFor='todo'></label>
-      <input type="text" id='todo' 
-      placeholder="enter todo"
-      value={title}
-      onChange={handleChange}/>
+      <label htmlFor="todo">
+        <input
+          type="text"
+          id="todo"
+          placeholder="enter todo"
+          value={title}
+          onChange={handleChange}
+        />
+      </label>
       <button type="submit">Add</button>
     </form>
   );
