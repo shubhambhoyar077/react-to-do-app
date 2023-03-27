@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shubhambhoyar077/react-to-do-app/static/css/main.109bbc07.css",
+    "main.js": "/shubhambhoyar077/react-to-do-app/static/js/main.53de0cb5.js",
+    "index.html": "/shubhambhoyar077/react-to-do-app/index.html",
+    "main.109bbc07.css.map": "/shubhambhoyar077/react-to-do-app/static/css/main.109bbc07.css.map",
+    "main.53de0cb5.js.map": "/shubhambhoyar077/react-to-do-app/static/js/main.53de0cb5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.109bbc07.css",
+    "static/js/main.53de0cb5.js"
+  ]
+}
