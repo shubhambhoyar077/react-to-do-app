@@ -31,9 +31,18 @@ export default function TodosLogic() {
     }));
   };
 
+  const addItem = (todo) => {
+    const newtodo = {
+      id: 4,
+      todo: todo,
+      completed: false
+    }
+    setTodos([...todos, newtodo]);
+  }
+
   return (
     <div className="todo-logic">
-      <InputTodo />
+      <InputTodo addItem={addItem}/>
       <TodosList todos={todos} handelCheckBox={handelCheckBox} />
     </div>
   );
