@@ -4,7 +4,7 @@ import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 import Storage from '../storage';
 
-const storage  = new Storage();
+const storage = new Storage();
 
 export default function TodosLogic() {
   const [todos, setTodos] = useState(storage.getLocalStorage);
@@ -51,9 +51,8 @@ export default function TodosLogic() {
   };
 
   const handelClearAll = () => {
-    setTodos(todos.filter((element) => 
-    !element.completed));
-  }
+    setTodos(todos.filter((element) => !element.completed));
+  };
 
   return (
     <div className="todo-logic">
@@ -64,7 +63,7 @@ export default function TodosLogic() {
         handelDelClick={handelDelClick}
         handelSaveClick={handelSaveClick}
       />
-      <button className='clear' onClick={handelClearAll}>Clear All</button>
+      <button type="button" className="clear" onClick={handelClearAll}>Clear All</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export default class Storage {
   getLocalStorage = () => {
     const toDoList = JSON.parse(localStorage.getItem('todo_list'));
-    return (toDoList ? toDoList:[]);
+    return (toDoList || []);
   }
 
   updateLocalStorage = (toDoList) => {

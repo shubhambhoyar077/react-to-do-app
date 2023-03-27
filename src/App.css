@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -13,53 +13,59 @@
   padding: 0 15%;
 }
 
-.disable{
+.disable {
   display: none;
 }
-ul{
+
+ul {
   list-style: none;
 }
-.todos{
+
+.todos {
   border: 1px solid gray;
   width: 100%;
   max-width: 750px;
   padding: 4px 4px;
 }
 
-button{
+button {
   margin-left: 5px;
 }
-button svg{
+
+button svg {
   color: #5e5e5e;
   font-size: 20px;
   margin-top: 2px;
 }
 
-.todoitem{
+.todoitem {
   display: flex;
   justify-content: space-between;
   margin: 2% 0;
   border-bottom: 1px solid gray;
 }
-form{
+
+form {
   display: flex;
   justify-content: space-between;
   margin: 2% 0;
 }
-.input-text{
+
+.input-text {
   width: 100%;
-font-size: 20px;
-padding: 2px;
+  font-size: 20px;
+  padding: 2px;
 }
-.todoitem input{
+
+.todoitem input {
   margin-right: 5px;
 }
 
-.mark{
+.mark {
   text-decoration: line-through;
 }
 
-.clear{
+.clear {
   width: 100%;
   margin: 0;
   border: none;
