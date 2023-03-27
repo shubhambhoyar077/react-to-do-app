@@ -15,7 +15,7 @@ export default function TodoItem({ item, handelCheckBox }) {
 
 TodoItem.propTypes = {
   item: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     todo: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,

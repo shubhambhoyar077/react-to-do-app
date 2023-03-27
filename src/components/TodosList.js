@@ -17,7 +17,7 @@ function TodosList({ todos, handelCheckBox }) {
 
 TodosList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     todo: PropTypes.string,
     completed: PropTypes.bool,
   })).isRequired,

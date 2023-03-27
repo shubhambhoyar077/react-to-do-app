@@ -1,23 +1,10 @@
 import { useState } from 'react';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodosLogic() {
-  const [todos, setTodos] = useState([{
-    id: 1,
-    todo: 'Test 1',
-    completed: false,
-  },
-  {
-    id: 2,
-    todo: 'Test 2',
-    completed: false,
-  },
-  {
-    id: 3,
-    todo: 'Test 3',
-    completed: false,
-  }]);
+  const [todos, setTodos] = useState([]);
 
   const handelCheckBox = (id) => {
     setTodos((prev) => prev.map((element) => {
@@ -33,7 +20,7 @@ export default function TodosLogic() {
 
   const addItem = (todo) => {
     const newtodo = {
-      id: 4,
+      id: uuidv4(),
       todo: todo,
       completed: false
     }
