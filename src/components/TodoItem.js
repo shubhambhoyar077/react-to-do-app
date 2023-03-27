@@ -35,7 +35,7 @@ export default function TodoItem({
             checked={item.completed}
             onChange={() => handelCheckBox(item.id)}
           />
-          {title}
+          <span className={item.completed ? 'mark' : ''}>{title}</span>
         </div>
         <div>
           <button type="button" onClick={handelEditClick}><AiFillEdit /></button>

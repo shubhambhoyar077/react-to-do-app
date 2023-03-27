@@ -54,3 +54,7 @@ padding: 2px;
 .todoitem input{
   margin-right: 5px;
 }
+
+.mark{
+  text-decoration: line-through;
+}
